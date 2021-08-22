@@ -1,25 +1,17 @@
 # Adafruit IO Arduino Library
 
-[![Build Status](https://github.com/adafruit/Adafruit_IO_Arduino/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_IO_Arduino/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit_IO_Arduino/html/index.html)
+- [API Documentation](https://adafruit.github.io/Adafruit_IO_Arduino/) 
 
-[![Discord](https://img.shields.io/discord/327254708534116352.svg)](https://adafru.it/discord)
+Adafruit's library wants SSID and Password as a constant. This adds in WifiManager so that it connects to wifi without SSID/password hardcoded
 
-![AIOArduino](https://cdn-learn.adafruit.com/assets/assets/000/057/496/original/adafruit_io_AIOA.png?1531335660)
+Used this to add WifiManager: https://github.com/tzapu/WiFiManager/issues/243#issuecomment-364804188
 
-This library provides a simple device independent interface for interacting with [Adafruit IO](https://io.adafruit.com) using Arduino. It allows you to switch between WiFi (ESP8266, ESP32, ESP32-S2, Airlift, WINC1500, & WICED), Cellular (32u4 FONA), and Ethernet (Ethernet FeatherWing).
+# Use
+Download library as a ZIP file and rename the Zip to AdafruitIO_Arduino
+Sketch > Include Library > Add .ZIP library and upload the Zip
+Install WifiManager library: https://github.com/tzapu/WiFiManager
 
-## Documentation
-
-The Doxygen documentation is automatically generated from the source files
-in this repository, and documents the API exposed by this library.
-
-- [API Documentation](https://adafruit.github.io/Adafruit_IO_Arduino/) (automatically generated via doxygen from source)
-
-## License
-
-This open source code is licensed under the MIT license (see [LICENSE](LICENSE)
-for details).
-
-Adafruit invests time and resources providing this open source code, please
-support Adafruit and open-source hardware by purchasing products from
-[Adafruit](https://www.adafruit.com)!
+Declare IO as
+```
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, nullptr, nullptr);
+```
